@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WANDING CONSTRUCTION — Entreprise de Bâtiment & Génie Civil | 万鼎建筑</title>
+<meta name="description" content="WANDING CONSTRUCTION — Entreprise de construction, bâtiment, tours, villas et centrales à béton en RDC. 万鼎建筑，刚果（金）建筑工程、高层塔楼、别墅与搅拌站。">
+<style>
+  :root{
+    --ink:#16202b;
+    --ink2:#2b3a48;
+    --muted:#5d6b78;
+    --line:#e3e8ee;
+    --bg:#ffffff;
+    --bg2:#f4f6f9;
+    --accent:#e8862b;
+    --accent-dark:#c96d18;
+    --navy:#17324d;
+    --green:#2f9e6e;
+    --shadow:0 10px 30px rgba(20,35,50,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px;}
+  .btn{display:inline-block;padding:13px 28px;border-radius:6px;font-weight:700;font-size:15px;cursor:pointer;border:none;transition:.2s;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.12);}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-navy:hover{background:#0f2438;}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.5px;}
+  .logo .mark{width:38px;height:38px;border-radius:7px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff;}
+  .logo small{display:block;font-size:10px;font-weight:600;letter-spacing:2px;opacity:.85;}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-links a{color:#fff;font-size:15px;font-weight:500;opacity:.92;position:relative;}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:.25s;}
+  .nav-links a:hover::after{width:100%;}
+  .lang{display:flex;border:1px solid rgba(255,255,255,.4);border-radius:6px;overflow:hidden;}
+  .lang button{background:transparent;color:#fff;border:none;padding:7px 12px;font-size:13px;cursor:pointer;font-weight:600;}
+  .lang button.active{background:var(--accent);}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+  header.scrolled{background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.08);}
+  header.scrolled .logo,header.scrolled .nav-links a{color:var(--navy);}
+  header.scrolled .lang{border-color:#c5cfd9;}
+  header.scrolled .lang button{color:var(--navy);}
+  header.scrolled .burger{color:var(--navy);}
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;
+    background:linear-gradient(rgba(14,28,42,.72),rgba(14,28,42,.82)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;}
+  .hero h1{font-size:clamp(30px,4.6vw,56px);line-height:1.15;font-weight:800;margin-bottom:18px;}
+  .hero h1 span{color:var(--accent);}
+  .hero p{font-size:clamp(16px,1.6vw,19px);max-width:640px;color:#e7edf2;margin-bottom:32px;}
+  .hero .actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);opacity:.7;font-size:13px;}
+  .stats{background:var(--navy);color:#fff;}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:40px 0;text-align:center;}
+  .stats .num{font-size:40px;font-weight:800;color:var(--accent);}
+  .stats .lbl{font-size:14px;color:#cdd8e2;margin-top:4px;}
+  section{padding:84px 0;}
+  .sec-head{max-width:720px;margin-bottom:48px;}
+  .sec-head .kicker{color:var(--accent);font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;}
+  .sec-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;margin:10px 0 12px;color:var(--navy);}
+  .sec-head p{color:var(--muted);}
+  .bg-alt{background:var(--bg2);}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .about .imgs{position:relative;}
+  .about .imgs img{border-radius:12px;box-shadow:var(--shadow);}
+  .about .badge{position:absolute;bottom:-22px;right:-14px;background:var(--accent);color:#fff;border-radius:12px;padding:18px 24px;text-align:center;box-shadow:var(--shadow);}
+  .about .badge b{font-size:30px;display:block;line-height:1;}
+  .about h3{font-size:26px;color:var(--navy);margin-bottom:14px;}
+  .about p{color:var(--muted);margin-bottom:14px;}
+  .about ul{list-style:none;margin:18px 0 26px;}
+  .about ul li{padding-left:30px;position:relative;margin-bottom:10px;color:var(--ink2);}
+  .about ul li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;background:var(--green);color:#fff;border-radius:50%;text-align:center;font-size:12px;line-height:20px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px 26px;transition:.25s;}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .card .ic{width:54px;height:54px;border-radius:10px;background:#fdf0e2;color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;}
+  .card h3{font-size:19px;color:var(--navy);margin-bottom:10px;}
+  .card p{color:var(--muted);font-size:14.5px;}
+  .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pj{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);}
+  .pj img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+  .pj:hover img{transform:scale(1.08);}
+  .pj .ov{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(12,24,36,.9));display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff;}
+  .pj .tag{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+  .pj h3{font-size:18px;margin:3px 0 4px;}
+  .pj p{font-size:13px;color:#d4dde5;}
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .why .w{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;}
+  .why .w .n{flex:none;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;}
+  .why .w h4{color:var(--navy);font-size:17px;margin-bottom:5px;}
+  .why .w p{color:var(--muted);font-size:14px;}
+  .cta{background:linear-gradient(rgba(19,40,60,.9),rgba(19,40,60,.9)),
+    url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80") center/cover;
+    color:#fff;text-align:center;padding:80px 0;}
+  .cta h2{font-size:clamp(26px,3vw,36px);margin-bottom:14px;}
+  .cta p{color:#d6e0e8;margin-bottom:28px;max-width:620px;margin-left:auto;margin-right:auto;}
+  .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:46px;}
+  .cinfo h3{color:var(--navy);font-size:24px;margin-bottom:18px;}
+  .cinfo .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;}
+  .cinfo .row .ic{flex:none;width:44px;height:44px;border-radius:9px;background:#fdf0e2;color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .cinfo .row b{display:block;color:var(--navy);}
+  .cinfo .row span{color:var(--muted);font-size:14.5px;}
+  form .field{margin-bottom:16px;}
+  form label{display:block;font-size:13.5px;font-weight:600;color:var(--ink2);margin-bottom:6px;}
+  form input,form textarea,form select{width:100%;padding:12px 14px;border:1px solid #cfd8e1;border-radius:7px;font-size:15px;font-family:inherit;background:#fff;}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--accent);}
+  form textarea{resize:vertical;min-height:110px;}
+  .form-note{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  footer{background:#0e1c2a;color:#aebbc8;padding:56px 0 24px;}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;margin-bottom:36px;}
+  footer h4{color:#fff;font-size:16px;margin-bottom:16px;}
+  footer .logo{color:#fff;margin-bottom:14px;}
+  footer p{font-size:14px;}
+  footer ul{list-style:none;}
+  footer ul li{margin-bottom:9px;font-size:14px;}
+  footer ul li a:hover{color:var(--accent);}
+  .fbottom{border-top:1px solid #213244;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;}
+  @media(max-width:920px){
+    .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:78%;max-width:320px;background:#10243a;flex-direction:column;align-items:flex-start;justify-content:center;padding:40px 32px;gap:24px;transition:.35s;}
+    .nav-links.open{right:0;}
+    .nav-links a{color:#fff !important;font-size:18px;}
+    .burger{display:block;z-index:101;}
+    .stats .grid{grid-template-columns:repeat(2,1fr);gap:28px;}
+    .about,.contact{grid-template-columns:1fr;}
+    .cards,.projects,.why{grid-template-columns:repeat(2,1fr);}
+    .fgrid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:560px){
+    section{padding:60px 0;}
+    .cards,.projects,.why{grid-template-columns:1fr;}
+    .fgrid{grid-template-columns:1fr;}
+    .about .badge{right:10px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#home" class="logo">
+      <span class="mark">W</span>
+      <span>WANDING<small>CONSTRUCTION · 万鼎建筑</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-t="nav_home">Accueil</a>
+      <a href="#about" data-t="nav_about">À propos</a>
+      <a href="#services" data-t="nav_services">Services</a>
+      <a href="#projects" data-t="nav_projects">Projets</a>
+      <a href="#contact" data-t="nav_contact">Contact</a>
+      <div class="lang">
+        <button id="btnFR" class="active" onclick="setLang('fr')">FR</button>
+        <button id="btnZH" onclick="setLang('zh')">中文</button>
+      </div>
+    </nav>
+    <button class="burger" id="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <h1 data-t="hero_title">Construire l'avenir, <span>bâtiment par bâtiment</span></h1>
+    <p data-t="hero_sub">WANDING CONSTRUCTION conçoit et réalise des tours, villas, immeubles et infrastructures en République Démocratique du Congo — avec la rigueur d'un grand groupe et la connaissance du terrain local.</p>
+    <div class="actions">
+      <a href="#contact" class="btn btn-primary" data-t="hero_cta1">Demander un devis gratuit</a>
+      <a href="#projects" class="btn btn-ghost" data-t="hero_cta2">Voir nos projets</a>
+    </div>
+  </div>
+  <div class="scroll-hint" data-t="scroll">▼ Faites défiler</div>
+</section>
+
+<div class="stats">
+  <div class="wrap grid">
+    <div><div class="num">15+</div><div class="lbl" data-t="st1">Années d'expérience · 年经验</div></div>
+    <div><div class="num">80+</div><div class="lbl" data-t="st2">Projets réalisés · 已交付项目</div></div>
+    <div><div class="num">3</div><div class="lbl" data-t="st3">Bases en RDC · 刚果金基地</div></div>
+    <div><div class="num">300+</div><div class="lbl" data-t="st4">Collaborateurs · 员工人数</div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="imgs">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80" alt="Chantier WANDING">
+      <div class="badge"><b>100%</b><span data-t="about_badge">Clé en main · 交钥匙</span></div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:14px;">
+        <div class="kicker" data-t="about_kicker">À PROPOS DE NOUS</div>
+      </div>
+      <h3 data-t="about_title">Un partenaire de construction de confiance en RDC</h3>
+      <p data-t="about_p1">WANDING CONSTRUCTION est une entreprise de bâtiment et de génie civil présente à Kinshasa, Lubumbashi et Kolwezi. Nous prenons en charge l'ensemble du cycle de construction : de la conception et du gros œuvre à la finition et à la livraison clé en main.</p>
+      <p data-t="about_p2">Grâce à nos propres centrales à béton, nos équipes et notre parc d'engins, nous maîtrisons les coûts, la qualité et les délais — même dans les environnements les plus exigeants.</p>
+      <ul>
+        <li data-t="about_l1">Études, conception et architecture</li>
+        <li data-t="about_l2">Gros œuvre, béton armé et structure</li>
+        <li data-t="about_l3">Centrales à béton intégrées</li>
+        <li data-t="about_l4">Finition, décoration et livraison</li>
+      </ul>
+      <a href="#contact" class="btn btn-navy" data-t="about_cta">Discuter de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" data-t="svc_kicker">NOS SERVICES</div>
+      <h2 data-t="svc_title">Une expertise complète de la construction</h2>
+      <p data-t="svc_sub">Des fondations à la remise des clés, nous couvrons tous les métiers du bâtiment et des travaux publics.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">🏢</div><h3 data-t="sv1_t">Bâtiment & Construction</h3><p data-t="sv1_p">Immeubles résidentiels et commerciaux, appartements, bureaux et bâtiments administratifs.</p></div>
+      <div class="card"><div class="ic">🏙️</div><h3 data-t="sv2_t">Tours & Gratte-ciel</h3><p data-t="sv2_p">Tours de grande hauteur de conception moderne, structure renforcée et standards internationaux.</p></div>
+      <div class="card"><div class="ic">🏡</div><h3 data-t="sv3_t">Villas de luxe</h3><p data-t="sv3_p">Villas haut de gamme et résidences privées, finitions soignées et architecture sur mesure.</p></div>
+      <div class="card"><div class="ic">🏗️</div><h3 data-t="sv4_t">Centrales à béton</h3><p data-t="sv4_p">Production et fourniture de béton prêt à l'emploi avec nos propres centrales et malaxeurs.</p></div>
+      <div class="card"><div class="ic">🛠️</div><h3 data-t="sv5_t">Rénovation & Finition</h3><p data-t="sv5_p">Réhabilitation, aménagement intérieur, décoration, plomberie et électricité.</p></div>
+      <div class="card"><div class="ic">🌉</div><h3 data-t="sv6_t">Génie civil & Infrastructures</h3><p data-t="sv6_p">Travaux publics, voiries, ouvrages et infrastructures industrielles et de génie civil.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" data-t="pj_kicker">PROJETS EN VEDETTE</div>
+      <h2 data-t="pj_title">Nos réalisations phares</h2>
+      <p data-t="pj_sub">Un aperçu de projets résidentiels, commerciaux et d'infrastructure en RDC.</p>
+    </div>
+    <div class="projects">
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Tour">
+        <div class="ov"><span class="tag" data-t="pj1_tag">TOUR RÉSIDENTIELLE</span><h3>KINSHASA ROYAL TOWER</h3><p data-t="pj1_p">Tour de standing à Kinshasa · 金沙萨高档塔楼</p></div>
+      </div>
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Immeuble">
+        <div class="ov"><span class="tag" data-t="pj2_tag">IMMEUBLE ÉCOLOGIQUE</span><h3>ECO TOWER</h3><p data-t="pj2_p">Immeuble de grande hauteur écologique · 生态高层</p></div>
+      </div>
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Villa">
+        <div class="ov"><span class="tag" data-t="pj3_tag">VILLA PRIVÉE</span><h3 data-t="pj3_t">Villas de luxe</h3><p data-t="pj3_p">Résidences privées haut de gamme · 豪华私家别墅</p></div>
+      </div>
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=800&q=80" alt="Béton">
+        <div class="ov"><span class="tag" data-t="pj4_tag">CENTRALE À BÉTON</span><h3 data-t="pj4_t">Centrales à béton</h3><p data-t="pj4_p">Production de béton intégré · 自建搅拌站</p></div>
+      </div>
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80" alt="R+5">
+        <div class="ov"><span class="tag" data-t="pj5_tag">RÉSIDENTIEL</span><h3 data-t="pj5_t">Immeuble R+5</h3><p data-t="pj5_p">Immeuble résidentiel de 5 étages · 5+1层住宅楼</p></div>
+      </div>
+      <div class="pj">
+        <img src="https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=800&q=80" alt="CIEL">
+        <div class="ov"><span class="tag" data-t="pj6_tag">COMMERCIAL</span><h3>CIEL · KIN</h3><p data-t="pj6_p">Projet immobilier commercial · 商业地产项目</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" data-t="why_kicker">POURQUOI NOUS CHOISIR</div>
+      <h2 data-t="why_title">La qualité d'un grand groupe, la réactivité d'une entreprise locale</h2>
+    </div>
+    <div class="why">
+      <div class="w"><div class="n">01</div><div><h4 data-t="w1_t">Maîtrise des coûts</h4><p data-t="w1_p">Centrales à béton, équipes et matériels en interne pour des prix maîtrisés et transparents.</p></div></div>
+      <div class="w"><div class="n">02</div><div><h4 data-t="w2_t">Qualité garantie</h4><p data-t="w2_p">Béton armé, matériaux et finitions contrôlés à chaque étape du chantier.</p></div></div>
+      <div class="w"><div class="n">03</div><div><h4 data-t="w3_t">Respect des délais</h4><p data-t="w3_p">Planification rigoureuse et suivis réguliers pour livrer à la date promise.</p></div></div>
+      <div class="w"><div class="n">04</div><div><h4 data-t="w4_t">Connaissance du terrain</h4><p data-t="w4_p">Trois bases en RDC, une équipe locale et une logistique rodée.</p></div></div>
+      <div class="w"><div class="n">05</div><div><h4 data-t="w5_t">Clé en main</h4><p data-t="w5_p">De la conception à la remise des clés, un seul interlocuteur responsable.</p></div></div>
+      <div class="w"><div class="n">06</div><div><h4 data-t="w6_t">Sécurité</h4><p data-t="w6_p">Normes de sécurité sur les chantiers et gestion professionnelle des équipes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2 data-t="cta_title">Un projet de construction en tête ?</h2>
+    <p data-t="cta_sub">Confiez-nous votre vision : nous vous fournissons un conseil, une estimation et un devis clair, sans engagement.</p>
+    <a href="#contact" class="btn btn-primary" data-t="cta_btn">Obtenir un devis gratuit</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="cinfo">
+      <div class="kicker" style="color:var(--accent);font-weight:700;letter-spacing:2px;font-size:13px;" data-t="ct_kicker">CONTACT</div>
+      <h3 data-t="ct_title">Parlons de votre projet</h3>
+      <div class="row"><div class="ic">📍</div><div><b data-t="ct_addr_t">Adresses</b><span data-t="ct_addr">Kinshasa · Lubumbashi · Kolwezi, RDC<br>金沙萨 · 卢本巴希 · 科卢韦齐</span></div></div>
+      <div class="row"><div class="ic">📞</div><div><b data-t="ct_phone_t">Téléphone</b><span>+243 000 000 000</span></div></div>
+      <div class="row"><div class="ic">✉️</div><div><b data-t="ct_mail_t">E-mail</b><span>contact@wanding-construction.com</span></div></div>
+      <div class="row"><div class="ic">🕘</div><div><b data-t="ct_hours_t">Horaires</b><span data-t="ct_hours">Lun – Sam, 08h00 – 18h00 · 周一至周六</span></div></div>
+    </div>
+    <form onsubmit="return handleForm(event)">
+      <div class="field"><label data-t="f_name">Nom complet</label><input type="text" required data-ph="f_name_ph"></div>
+      <div class="field"><label data-t="f_email">E-mail</label><input type="email" required></div>
+      <div class="field"><label data-t="f_phone">Téléphone</label><input type="tel"></div>
+      <div class="field"><label data-t="f_service">Type de projet</label>
+        <select>
+          <option data-t="sv1_t">Bâtiment & Construction</option>
+          <option data-t="sv2_t">Tours & Gratte-ciel</option>
+          <option data-t="sv3_t">Villas de luxe</option>
+          <option data-t="sv4_t">Centrales à béton</option>
+          <option data-t="sv5_t">Rénovation & Finition</option>
+          <option data-t="sv6_t">Génie civil & Infrastructures</option>
+        </select>
+      </div>
+      <div class="field"><label data-t="f_msg">Votre message</label><textarea required data-ph="f_msg_ph"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;" data-t="f_send">Envoyer la demande</button>
+      <div class="form-note" data-t="f_note">Vos informations sont uniquement utilisées pour répondre à votre demande.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo"><span class="mark">W</span><span>WANDING<small style="display:block;font-size:10px;letter-spacing:2px;opacity:.8;">CONSTRUCTION · 万鼎建筑</small></span></div>
+        <p data-t="f_about">Entreprise de bâtiment et de génie civil en RDC. Nous construisons des tours, villas, immeubles et infrastructures avec exigence et passion.</p>
+      </div>
+      <div>
+        <h4 data-t="nav_services">Services</h4>
+        <ul>
+          <li><a href="#services" data-t="sv1_t">Bâtiment & Construction</a></li>
+          <li><a href="#services" data-t="sv2_t">Tours & Gratte-ciel</a></li>
+          <li><a href="#services" data-t="sv3_t">Villas de luxe</a></li>
+          <li><a href="#services" data-t="sv4_t">Centrales à béton</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-t="f_company">Entreprise</h4>
+        <ul>
+          <li><a href="#about" data-t="nav_about">À propos</a></li>
+          <li><a href="#projects" data-t="nav_projects">Projets</a></li>
+          <li><a href="#contact" data-t="nav_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-t="ct_addr_t">Adresses</h4>
+        <ul>
+          <li>Kinshasa, RDC</li>
+          <li>Lubumbashi, RDC</li>
+          <li>Kolwezi, RDC</li>
+          <li>contact@wanding-construction.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 WANDING CONSTRUCTION · 万鼎建筑. <span data-t="f_rights">Tous droits réservés.</span></span>
+      <span data-t="f_made">Conçu en RDC · 在刚果金打造</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+fr:{
+ nav_home:"Accueil",nav_about:"À propos",nav_services:"Services",nav_projects:"Projets",nav_contact:"Contact",
+ hero_title:["Construire l'avenir, ","bâtiment par bâtiment"],
+ hero_sub:"WANDING CONSTRUCTION conçoit et réalise des tours, villas, immeubles et infrastructures en République Démocratique du Congo — avec la rigueur d'un grand groupe et la connaissance du terrain local.",
+ hero_cta1:"Demander un devis gratuit",hero_cta2:"Voir nos projets",scroll:"▼ Faites défiler",
+ st1:"Années d'expérience",st2:"Projets réalisés",st3:"Bases en RDC",st4:"Collaborateurs",
+ about_badge:"Clé en main",about_kicker:"À PROPOS DE NOUS",about_title:"Un partenaire de construction de confiance en RDC",
+ about_p1:"WANDING CONSTRUCTION est une entreprise de bâtiment et de génie civile présente à Kinshasa, Lubumbashi et Kolwezi. Nous prenons en charge l'ensemble du cycle de construction : de la conception et du gros œuvre à la finition et à la livraison clé en main.",
+ about_p2:"Grâce à nos propres centrales à béton, nos équipes et notre parc d'engins, nous maîtrisons les coûts, la qualité et les délais — même dans les environnements les plus exigeants.",
+ about_l1:"Études, conception et architecture",about_l2:"Gros œuvre, béton armé et structure",about_l3:"Centrales à béton intégrées",about_l4:"Finition, décoration et livraison",about_cta:"Discuter de votre projet",
+ svc_kicker:"NOS SERVICES",svc_title:"Une expertise complète de la construction",svc_sub:"Des fondations à la remise des clés, nous couvrons tous les métiers du bâtiment et des travaux publics.",
+ sv1_t:"Bâtiment & Construction",sv1_p:"Immeubles résidentiels et commerciaux, appartements, bureaux et bâtiments administratifs.",
+ sv2_t:"Tours & Gratte-ciel",sv2_p:"Tours de grande hauteur de conception moderne, structure renforcée et standards internationaux.",
+ sv3_t:"Villas de luxe",sv3_p:"Villas haut de gamme et résidences privées, finitions soignées et architecture sur mesure.",
+ sv4_t:"Centrales à béton",sv4_p:"Production et fourniture de béton prêt à l'emploi avec nos propres centrales et malaxeurs.",
+ sv5_t:"Rénovation & Finition",sv5_p:"Réhabilitation, aménagement intérieur, décoration, plomberie et électricité.",
+ sv6_t:"Génie civil & Infrastructures",sv6_p:"Travaux publics, voiries, ouvrages et infrastructures industrielles et de génie civil.",
+ pj_kicker:"PROJETS EN VEDETTE",pj_title:"Nos réalisations phares",pj_sub:"Un aperçu de projets résidentiels, commerciaux et d'infrastructure en RDC.",
+ pj1_tag:"TOUR RÉSIDENTIELLE",pj1_p:"Tour de standing à Kinshasa",
+ pj2_tag:"IMMEUBLE ÉCOLOGIQUE",pj2_p:"Immeuble de grande hauteur écologique",
+ pj3_t:"Villas de luxe",pj3_p:"Résidences privées haut de gamme",pj3_tag:"VILLA PRIVÉE",
+ pj4_t:"Centrales à béton",pj4_p:"Production de béton intégré",pj4_tag:"CENTRALE À BÉTON",
+ pj5_t:"Immeuble R+5",pj5_p:"Immeuble résidentiel de 5 étages",pj5_tag:"RÉSIDENTIEL",
+ pj6_p:"Projet immobilier commercial",pj6_tag:"COMMERCIAL",
+ why_kicker:"POURQUOI NOUS CHOISIR",why_title:"La qualité d'un grand groupe, la réactivité d'une entreprise locale",
+ w1_t:"Maîtrise des coûts",w1_p:"Centrales à béton, équipes et matériels en interne pour des prix maîtrisés et transparents.",
+ w2_t:"Qualité garantie",w2_p:"Béton armé, matériaux et finitions contrôlés à chaque étape du chantier.",
+ w3_t:"Respect des délais",w3_p:"Planification rigoureuse et suivis réguliers pour livrer à la date promise.",
+ w4_t:"Connaissance du terrain",w4_p:"Trois bases en RDC, une équipe locale et une logistique rodée.",
+ w5_t:"Clé en main",w5_p:"De la conception à la remise des clés, un seul interlocuteur responsable.",
+ w6_t:"Sécurité",w6_p:"Normes de sécurité sur les chantiers et gestion professionnelle des équipes.",
+ cta_title:"Un projet de construction en tête ?",cta_sub:"Confiez-nous votre vision : nous vous fournissons un conseil, une estimation et un devis clair, sans engagement.",cta_btn:"Obtenir un devis gratuit",
+ ct_kicker:"CONTACT",ct_title:"Parlons de votre projet",ct_addr_t:"Adresses",ct_addr:"Kinshasa · Lubumbashi · Kolwezi, RDC",ct_phone_t:"Téléphone",ct_mail_t:"E-mail",ct_hours_t:"Horaires",ct_hours:"Lun – Sam, 08h00 – 18h00",
+ f_name:"Nom complet",f_name_ph:"Votre nom",f_email:"E-mail",f_phone:"Téléphone",f_service:"Type de projet",f_msg:"Votre message",f_msg_ph:"Décrivez votre projet…",f_send:"Envoyer la demande",
+ f_note:"Vos informations sont uniquement utilisées pour répondre à votre demande.",
+ f_about:"Entreprise de bâtiment et de génie civil en RDC. Nous construisons des tours, villas, immeubles et infrastructures avec exigence et passion.",
+ f_company:"Entreprise",f_rights:"Tous droits réservés.",f_made:"Conçu en RDC"
+},
+zh:{
+ nav_home:"首页",nav_about:"关于我们",nav_services:"服务",nav_projects:"项目",nav_contact:"联系我们",
+ hero_title:["建设未来，","一砖一瓦"],
+ hero_sub:"万鼎建筑在刚果（金）承建高层塔楼、豪华别墅、住宅与基础设施——以大集团的严谨标准，结合对本地市场的深刻理解。",
+ hero_cta1:"免费获取报价",hero_cta2:"查看我们的项目",scroll:"▼ 向下滚动",
+ st1:"年行业经验",st2:"已交付项目",st3:"刚果金基地",st4:"员工人数",
+ about_badge:"交钥匙工程",about_kicker:"关于我们",about_title:"刚果（金）值得信赖的建筑合作伙伴",
+ about_p1:"万鼎建筑是一家扎根金沙萨、卢本巴希和科卢韦齐的建筑与土木工程企业。我们负责从设计、主体施工到精装修、交钥匙交付的完整建设周期。",
+ about_p2:"依托自建搅拌站、自有团队与工程车队，我们对成本、质量和工期实现全面掌控——即使在最严苛的环境中也能从容应对。",
+ about_l1:"勘察、设计与建筑方案",about_l2:"主体施工、钢筋混凝土与结构",about_l3:"自建混凝土搅拌站",about_l4:"精装修与交付",about_cta:"洽谈您的项目",
+ svc_kicker:"我们的服务",svc_title:"覆盖建筑全流程的专业能力",svc_sub:"从地基到交钥匙，我们涵盖房建与市政工程的所有环节。",
+ sv1_t:"房建工程",sv1_p:"住宅与商业楼宇、公寓、写字楼及行政办公楼。",
+ sv2_t:"高层塔楼",sv2_p:"现代设计的高层建筑，结构稳固，符合国际标准。",
+ sv3_t:"豪华别墅",sv3_p:"高端别墅与私人住宅，工艺考究，量身定制。",
+ sv4_t:"混凝土搅拌站",sv4_p:"依托自建搅拌站与搅拌车，生产供应商品混凝土。",
+ sv5_t:"翻新与装修",sv5_p:"改造、室内设计、装饰、给排水与电气工程。",
+ sv6_t:"土建与基础设施",sv6_p:"市政工程、道路、构筑物及工业与民用基础设施。",
+ pj_kicker:"精选项目",pj_title:"我们的标杆工程",pj_sub:"刚果（金）住宅、商业与基础设施项目一览。",
+ pj1_tag:"住宅塔楼",pj1_p:"金沙萨高档塔楼",
+ pj2_tag:"生态楼宇",pj2_p:"生态高层建筑",
+ pj3_t:"豪华别墅",pj3_p:"高端私人住宅",pj3_tag:"私人别墅",
+ pj4_t:"混凝土搅拌站",pj4_p:"一体化混凝土生产",pj4_tag:"搅拌站",
+ pj5_t:"R+5 住宅楼",pj5_p:"5+1层住宅楼",pj5_tag:"住宅",
+ pj6_p:"商业地产项目",pj6_tag:"商业",
+ why_kicker:"为什么选择我们",why_title:"大集团的品质，本地企业的响应速度",
+ w1_t:"成本可控",w1_p:"自建搅拌站、自有团队与设备，价格透明可控。",
+ w2_t:"品质保障",w2_p:"钢筋混凝土、材料与精装修在每个环节都严格把控。",
+ w3_t:"信守工期",w3_p:"周密计划与定期跟进，确保按期交付。",
+ w4_t:"熟悉本地",w4_p:"三大基地、本地团队与成熟的物流体系。",
+ w5_t:"交钥匙交付",w5_p:"从设计到交钥匙，单一负责人全程对接。",
+ w6_t:"安全施工",w6_p:"工地安全规范，团队专业化管理。",
+ cta_title:"有建筑项目计划？",cta_sub:"把您的构想交给我们：我们将提供专业建议、预算与清晰报价，无需任何承诺。",cta_btn:"免费获取报价",
+ ct_kicker:"联系我们",ct_title:"聊聊您的项目",ct_addr_t:"地址",ct_addr:"金沙萨 · 卢本巴希 · 科卢韦齐（刚果金）",ct_phone_t:"电话",ct_mail_t:"邮箱",ct_hours_t:"工作时间",ct_hours:"周一至周六 08:00 – 18:00",
+ f_name:"姓名",f_name_ph:"您的姓名",f_email:"邮箱",f_phone:"电话",f_service:"项目类型",f_msg:"留言",f_msg_ph:"请描述您的项目…",f_send:"发送需求",
+ f_note:"您的信息仅用于回复您的咨询。",
+ f_about:"万鼎建筑是刚果（金）的建筑与土木工程企业，以高标准与热忱建设塔楼、别墅、住宅与基础设施。",
+ f_company:"公司",f_rights:"版权所有。",f_made:"在刚果金打造"
+}
+};
+
+let currentLang = "fr";
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "fr";
+  document.getElementById("btnFR").classList.toggle("active", lang==="fr");
+  document.getElementById("btnZH").classList.toggle("active", lang==="zh");
+  const dict = I18N[lang];
+  document.querySelectorAll("[data-t]").forEach(el=>{
+    const key = el.getAttribute("data-t");
+    const val = dict[key];
+    if(val === undefined) return;
+    if(Array.isArray(val)){
+      el.innerHTML = val[0] + "<span>" + val[1] + "</span>";
+    }else{
+      el.textContent = val;
+    }
+  });
+  document.querySelectorAll("[data-ph]").forEach(el=>{
+    const key = el.getAttribute("data-ph");
+    if(dict[key]!==undefined) el.setAttribute("placeholder", dict[key]);
+  });
+}
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
+function handleForm(e){
+  e.preventDefault();
+  alert(currentLang==="zh" ? "感谢您的留言！我们会尽快与您联系。" : "Merci pour votre message ! Nous vous recontacterons rapidement.");
+  e.target.reset();
+  return false;
+}
+window.addEventListener("scroll",()=>{
+  document.getElementById("header").classList.toggle("scrolled", window.scrollY>60);
+});
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>{
+  document.getElementById("navLinks").classList.remove("open");
+}));
+</script>
+</body>
+</html>
